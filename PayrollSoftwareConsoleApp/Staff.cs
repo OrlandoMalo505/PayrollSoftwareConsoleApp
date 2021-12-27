@@ -24,17 +24,8 @@ namespace PayrollSoftwareConsoleApp
             protected set => _TotalPay = value;
         }
 
-        public float BasicPay
-        {
-            get
-            {
-                return _BasicPay;
-            }
-            private set
-            {
-                _BasicPay = value;
-            }
-        }
+        public float BasicPay { get; private set; }
+       
 
         public string NameOfStaff
         {
@@ -42,7 +33,9 @@ namespace PayrollSoftwareConsoleApp
             {
                 return _NameOfStaff;
             }
-            private set { _NameOfStaff = value; }
+            private set {
+                _NameOfStaff = value;
+            }
         }
 
         public int hoursWorked
@@ -53,8 +46,13 @@ namespace PayrollSoftwareConsoleApp
             }
             set
             {
-             
+                if (value > 0)
+                {
                     hWorked = value;
+                }
+                else
+                    hWorked = 0;
+                   
             }
         }
 
@@ -73,7 +71,7 @@ namespace PayrollSoftwareConsoleApp
 
         public override string ToString()
         {
-            return "HourlyRate=" + hourlyRate + ", Hours Worked= " + hWorked + ", Basic Pay = " + BasicPay + ", Total Pay=" + TotalPay +
+            return "\nHourlyRate=" + hourlyRate + "\n Hours Worked= " + hWorked + ", Basic Pay = " + BasicPay + ", Total Pay=" + TotalPay +
                 ", Name of Staff" + NameOfStaff;
         }
 
