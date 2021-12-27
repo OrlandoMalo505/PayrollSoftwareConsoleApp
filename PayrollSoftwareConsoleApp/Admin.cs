@@ -11,16 +11,17 @@ namespace PayrollSoftwareConsoleApp
 
         private const float overtimeRate = 15.5f;
         private const float adminHourlyRate = 30;
+        public float _Overtime;
 
         public float Overtime
         {
             get
             {
-                return Overtime;
+                return _Overtime;
             }
             private set
             {
-                Overtime = value;
+                _Overtime = value;
             }
         }
 

@@ -11,7 +11,7 @@ namespace PayrollSoftwareConsoleApp
         private int month;
         private int year;
 
-        enum MonthsOfYear
+        public enum MonthsOfYear
         {
             January=1,February, March, April, May, June, July, August, September, October, November, December
         }
@@ -34,7 +34,7 @@ namespace PayrollSoftwareConsoleApp
                 sw.WriteLine("Name of Staff: {0}", staff.NameOfStaff);
                 sw.WriteLine("Hours Worked: {0}", staff.hoursWorked);
                 sw.WriteLine("");
-                sw.WriteLine("Basic Pay: {1:C}",staff.BasicPay);
+                sw.WriteLine("Basic Pay: {0}",staff.BasicPay);
                 if (staff.GetType() == typeof(Manager))
                 {
                     sw.WriteLine("Allowance: {0:C}",((Manager)staff).Allowance);
@@ -46,7 +46,7 @@ namespace PayrollSoftwareConsoleApp
                 }
                 sw.WriteLine("");
                 sw.WriteLine("====================");
-                sw.WriteLine("Total Pay: {1:C}",staff.TotalPay);
+                sw.WriteLine("Total Pay: {0}",staff.TotalPay);
                 sw.WriteLine("====================");
                 sw.Close();
 

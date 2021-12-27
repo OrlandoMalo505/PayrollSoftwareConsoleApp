@@ -10,29 +10,29 @@ namespace PayrollSoftwareConsoleApp
     {
 
         private float hourlyRate;
-
+        public float _TotalPay;
         private int hWorked;
+        public string _NameOfStaff;
+        public float _BasicPay;
 
-        public float TotalPay {
+        public float TotalPay
+        {
             get
             {
-                return TotalPay;
+                return _TotalPay;
             }
-            protected set
-            {
-                TotalPay = value;
-            } 
+            protected set => _TotalPay = value;
         }
 
         public float BasicPay
         {
             get
             {
-                return BasicPay;
+                return _BasicPay;
             }
             private set
             {
-                BasicPay = value;
+                _BasicPay = value;
             }
         }
 
@@ -40,26 +40,23 @@ namespace PayrollSoftwareConsoleApp
         {
             get
             {
-                return NameOfStaff;
+                return _NameOfStaff;
             }
-            private set
-            {
-                NameOfStaff = value;
-            }
+            private set { _NameOfStaff = value; }
         }
 
         public int hoursWorked
         {
             get
             {
-                return hoursWorked;
+                return hWorked;
             }
             set
             {
-                if(hoursWorked >0)
-                    hoursWorked = value;
+                if(hWorked > 0)
+                    hWorked = value;
                 else
-                    hoursWorked = 0;
+                    hWorked = 0;
             }
         }
 

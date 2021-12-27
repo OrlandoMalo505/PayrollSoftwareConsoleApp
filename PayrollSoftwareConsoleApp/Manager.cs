@@ -9,15 +9,16 @@ namespace PayrollSoftwareConsoleApp
     internal class Manager:Staff
     {
         private const float managerHourlyRate = 50;
+        public int _Allowance;
 
         public int Allowance
         {
             get {
-                return Allowance; 
+                return _Allowance; 
                 }
             private set
             {
-                Allowance = value;
+                _Allowance = value;
             }
         }
 
