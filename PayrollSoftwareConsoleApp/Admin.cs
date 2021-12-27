@@ -33,9 +33,10 @@ namespace PayrollSoftwareConsoleApp
         public override void CalculatePay()
         {
             base.CalculatePay();
-            Overtime = overtimeRate * (hoursWorked - 160);
+            
             if (hoursWorked > 160)
             {
+                Overtime = overtimeRate * (hoursWorked - 160);
                 TotalPay = BasicPay + Overtime;
             }
         }

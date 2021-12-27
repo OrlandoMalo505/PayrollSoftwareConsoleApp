@@ -53,23 +53,21 @@ namespace PayrollSoftwareConsoleApp
             }
             set
             {
-                if(hWorked > 0)
+             
                     hWorked = value;
-                else
-                    hWorked = 0;
             }
         }
 
         public Staff(string name, float rate)
         {
-            NameOfStaff = name;
+            _NameOfStaff = name;
             hourlyRate = rate;
         }
 
         public virtual void CalculatePay()
         {
             Console.WriteLine("Calculating Pay...");
-            BasicPay = hWorked * hourlyRate;
+            BasicPay = hoursWorked * hourlyRate;
             TotalPay = BasicPay;
         }
 

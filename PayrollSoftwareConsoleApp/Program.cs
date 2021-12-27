@@ -1,5 +1,4 @@
 ﻿
-
 namespace PayrollSoftwareConsoleApp
 
 {
@@ -7,7 +6,7 @@ namespace PayrollSoftwareConsoleApp
     {
         public static void Main(string[] args)
         {
-            List<Staff> myStaff=new List<Staff>();
+            List<Staff> myStaff;
             FileReader fr = new FileReader();
             int month = 0;
             int year = 0;
@@ -22,7 +21,7 @@ namespace PayrollSoftwareConsoleApp
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine("Year must be a number");
+                    Console.WriteLine("Year must be a number.");
                 }
 
             }
@@ -47,22 +46,11 @@ namespace PayrollSoftwareConsoleApp
 
             myStaff = fr.ReadFile();
 
-            for(int i = 0; i < myStaff.Count; i++)
+            foreach (Staff f in myStaff)
             {
-                try
-                {
-                    Console.WriteLine("Enter the hours worked for {0}", myStaff[i].NameOfStaff);
-                    var result=Console.ReadLine();
-                    myStaff[i].hoursWorked= Convert.ToInt32(result);
-                    myStaff[i].CalculatePay();
-                    Console.WriteLine("Information:" + myStaff[i].ToString);
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine("Something went wrong!");
-                    i--;
-
-                }
+                Console.WriteLine("Enter the hours worked for {0}:", f.NameOfStaff);
+                f.hoursWorked = Convert.ToInt32(Console.ReadLine());
+                f.CalculatePay();
             }
 
             PaySlip ps = new PaySlip(month,year);

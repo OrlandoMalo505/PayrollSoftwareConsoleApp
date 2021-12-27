@@ -30,9 +30,10 @@ namespace PayrollSoftwareConsoleApp
         public override void CalculatePay()
         {
             base.CalculatePay();
-            Allowance = 1000;
+       
             if (hoursWorked > 160)
             {
+                Allowance = 1000;
                 TotalPay = BasicPay + Allowance;
             }
         }

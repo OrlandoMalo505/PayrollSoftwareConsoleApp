@@ -22,8 +22,8 @@ namespace PayrollSoftwareConsoleApp
                 {
                     while (!sr.EndOfStream)
                     {
-                        sr.ReadLine();
-                        result = sr.ReadLine().Split(separator,StringSplitOptions.RemoveEmptyEntries);
+                        
+                        result = sr.ReadLine().Split(separator,StringSplitOptions.None);
                         if (result[1] == "Manager")
                         {
                             myStaff.Add(new Manager(result[0]));

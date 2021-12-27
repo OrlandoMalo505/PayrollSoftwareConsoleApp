@@ -30,11 +30,11 @@ namespace PayrollSoftwareConsoleApp
                 path = staff.NameOfStaff + ".txt";
                 StreamWriter sw = new StreamWriter(path);
                 sw.WriteLine("PAYSLIP FOR {0} {1}",(MonthsOfYear)month,year);
-                sw.WriteLine("===================");
+                sw.WriteLine("==========================");
                 sw.WriteLine("Name of Staff: {0}", staff.NameOfStaff);
                 sw.WriteLine("Hours Worked: {0}", staff.hoursWorked);
                 sw.WriteLine("");
-                sw.WriteLine("Basic Pay: {0}",staff.BasicPay);
+                sw.WriteLine("Basic Pay: {0:C}", staff.BasicPay);
                 if (staff.GetType() == typeof(Manager))
                 {
                     sw.WriteLine("Allowance: {0:C}",((Manager)staff).Allowance);
@@ -46,7 +46,7 @@ namespace PayrollSoftwareConsoleApp
                 }
                 sw.WriteLine("");
                 sw.WriteLine("====================");
-                sw.WriteLine("Total Pay: {0}",staff.TotalPay);
+                sw.WriteLine("Total Pay: {0:C}", staff.TotalPay);
                 sw.WriteLine("====================");
                 sw.Close();
 
